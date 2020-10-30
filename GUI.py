@@ -1,7 +1,9 @@
 from tkinter import *
-
+from PIL import Image, ImageTk
 root = Tk()
 root.title("Luganda Keyword Spotter")
+#root.geometry('300x300')
+#root.configure(background='black')
 
 def audio():
     
@@ -69,19 +71,79 @@ def predictor():
     d = Label(root, text = predicted_keyword, padx=50, pady=5,borderwidth=5 ).grid(row=1, column=1)
     
 def command():
+   def sawa_meka():
+       import time
+       t = time.localtime()
+       current_time = time.strftime("%H:%M:%S", t)
+       messagebox.showinfo("Sawa meka", current_time)
     
+   def gulawo():
+       import os
+       path = "C:/Users"
+       path = os.path.realpath(path)
+       os.startfile(path)
+    
+   def galawo():
+       return
+    
+   def soma():
+       return
+    
+   def kuba():
+       return
+    
+   def tekako():
+       return
+   
+   def gyako():
+       return
+    
+   def ddamu():
+       return
+   
+   def kendeza():
+       return
+   
+   def yongeza():
+       return
+   
+   def sindika():
+       return
+   
+   def tandika():
+       return
+   
+   def yaka():
+       return
+   
+   def zikira():
+       return
+   
+   def numbers():
+       numbers = print("Please select a command rather than a number")
+       messagebox.showinfo("number detected",numbers)
+    
+   if predicted_keyword == "dataset\sawa_meka" :
+       sawa_meka()
+      
+   elif predicted_keyword == "dataset\gulawo" :
+       gulawo()
+   else :
+       print(...)
  
-    def sawa_meka():
-        import time
-        t = time.localtime()
-        current_time = time.strftime("%H:%M:%S", t)
-        messagebox.showinfo("Sawa meka", current_time)
 
     
+#Adding image for record button
+image =Image.open("audio.jpg")
+photo = ImageTk.PhotoImage(image)
 
-q = Button(root, text="Record Audio", padx=50, pady=5, borderwidth=5, command = audio )
-b = Button(root, text="Detect Keyword", padx=50, pady=5, borderwidth=5, command = predictor )
-c = Button(root, text="Run Command", padx=50, pady=5, borderwidth=5, command = command)
+l = Label(root, image=photo)
+l.bind("<Button-1>")
+
+
+q = Button(root, image=photo, padx=90, pady=9, borderwidth=5, command = audio )
+b = Button(root, text="Detect Keyword", padx=40, pady=5, borderwidth=5, command = predictor )
+c = Button(root, text="Run Command", padx=40, pady=5, borderwidth=5, command = command)
 
 q.grid(row=0, column=0)
 b.grid(row=1, column=0)
