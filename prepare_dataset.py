@@ -5,7 +5,7 @@ import json #create json files
 
 DATASET_PATH = "dataset"
 JSON_PATH = "data.json"
-SAMPLES_TO_CONSIDER = 22050 #1 second worth of sound basing on librosa's 
+SAMPLES_TO_CONSIDER = 44100 #2 seconds worth of sound basing on librosa's 
 
 #go through audio files, extract mfcc, save it in json file
 def prepare_dataset(DATASET_PATH, JSON_PATH, n_mfcc=13, hop_length=512, n_fft=2048):

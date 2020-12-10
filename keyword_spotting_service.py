@@ -3,39 +3,39 @@ import numpy as np
 import librosa 
 
 model_path = "model.h5"
-NUM_SAMPLES_TO_CONSIDER = 22050 # with sample rate = 1 second of sound
+NUM_SAMPLES_TO_CONSIDER = 44100 # with sample rate = 1 second of sound
 
 
 class _Keyword_Spotting_Service: #class can only have 1 instance in a program, singleton
     
     model = None
     _mappings = [
-        "dataset\\biri",
-        "dataset\\ddamu",
-        "dataset\\emu",
-        "dataset\\galawo",
-        "dataset\\gulawo",
-        "dataset\\gyako",
-        "dataset\\kendeza",
-        "dataset\\kuba",
-        "dataset\\kumi",
-        "dataset\\mukaga",
-        "dataset\\munana",
-        "dataset\\musanvu",
-        "dataset\\mwenda",
-        "dataset\\nnya",
-        "dataset\\satu",
-        "dataset\\sawa_meka",
-        "dataset\\sindika",
-        "dataset\\soma",
-        "dataset\\tandika",
-        "dataset\\tano",
-        "dataset\\tekako",
-        "dataset\\vaako",
-        "dataset\\yaka",
-        "dataset\\yongeza",
-        "dataset\\zeero",
-        "dataset\\zikira"
+        "biri",
+        "ddamu",
+        "emu",
+        "galawo",
+        "gulawo",
+        "gyako",
+        "kendeza",
+        "kuba",
+        "kumi",
+        "mukaga",
+        "munana",
+        "musanvu",
+        "mwenda",
+        "nnya",
+        "satu",
+        "sawa_meka",
+        "sindika",
+        "soma",
+        "tandika",
+        "tano",
+        "tekako",
+        "vaako",
+        "yaka",
+        "yongeza",
+        "zeero",
+        "zikira"
     ]
     _instance = None # to implement class as singleton
     
@@ -77,7 +77,7 @@ def Keyword_Spotting_Service():
 if __name__ == "__main__":
     kss = Keyword_Spotting_Service()
     
-    keyword2 = kss.predict("test/gulawo.wav")
+    keyword2 = kss.predict("output.wav")
     
     print(f"Predicted keywords: {keyword2}")
     

@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 DATA_PATH = "data.json"
 SAVED_MODEL_PATH = "model.h5"
 LEARNING_RATE = 0.0001
-EPOCHS = 40
+EPOCHS = 50
 BATCH_SIZE = 32
 NUM_KEYWORDS = 26
 
